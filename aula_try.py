@@ -14,7 +14,7 @@ try:
 except:
     print('Isso não é um número')
 
-# if numero_str.isdigit():
+# if numero_str.isdigit():   # isdigit() é uma função que verifica se o valor é só inteiro, retornando um boolean  
 #     numero_float = float(numero_str)
 #     print(f'O dobro de {numero_str} é {numero_float * 2:.2f}')
 # else:
