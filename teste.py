@@ -9,8 +9,7 @@ thickness = 2
 kernel = np.ones((2, 2), np.uint8)  # added 01/07/2021
 picflag = 0  # set value to 1 once picture is taken
 
-   # function to take still picture when water level goes beyond threshold
-
+# function to take still picture when water level goes beyond threshold
 def takepicture(frame):
         currentTime = datetime.now()
         # Create file name for our picture
@@ -25,13 +24,14 @@ def takepicture(frame):
         image = cv2.putText(frame, text, org, font, fontScale,
                             color, thickness, cv2.LINE_AA, False)
         cv2.imwrite(picName, image)
+        global picflag
         picflag = 1
         return 
 
-cap = cv2.VideoCapture(0)
+cap = './aulas_e_exercicios_python/Bottle-Gray-1024x845.png'
+
 while (True):
-    # Capture frame-by-frame
-    ret, frame = cap.read()  # ret = 1 if the video is captured; frame is the image
+    frame = cv2.imread(cap)
 
     # Our operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
