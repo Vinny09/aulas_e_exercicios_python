@@ -28,7 +28,7 @@ def takepicture(frame):
         picflag = 1
         return 
 
-cap = './aulas_e_exercicios_python/Bottle-Gray-1024x845.png'
+cap = './aulas_e_exercicios_python/img/Bottle-Gray-1024x845.png'
 
 while (True):
     frame = cv2.imread(cap)
