@@ -50,7 +50,7 @@ def decrypt_file(input_filename, output_filename, key):
 generate_key_and_save_to_file('filekey.key')
 
 # Criptografar um arquivo
-encrypt_file('test.txt', 'test_encrypted.txt', key)
+encrypt_file('./test.txt', 'test_encrypted2.txt', key)
 
 # Descriptografar um arquivo
-decrypt_file('test_encrypted.txt', 'test_decrypted.txt', key)
+decrypt_file('test_encrypted.txt', 'test_decrypted2.txt', key)
