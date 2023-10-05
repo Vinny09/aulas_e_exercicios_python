@@ -1,4 +1,5 @@
 from cryptography.fernet import Fernet
+import os
 
 # Função para gerar a chave e salvar a chave em um arquivo
 def generate_key_and_save_to_file(filename):
@@ -26,6 +27,10 @@ def encrypt_file(input_filename, output_filename, key):
     # gravar os dados criptografados
     with open(output_filename, 'wb') as encrypted_file:
         encrypted_file.write(encrypted)
+    
+    # Habilite a condição se quiser remover o arquivo original após criptografado
+    #if encrypted:
+        #os.remove('./test.txt')
 
 # Função para descriptografar um arquivo
 def decrypt_file(input_filename, output_filename, key):
@@ -50,7 +55,7 @@ def decrypt_file(input_filename, output_filename, key):
 generate_key_and_save_to_file('filekey.key')
 
 # Criptografar um arquivo
-encrypt_file('./test.txt', 'test_encrypted2.txt', key)
+encrypt_file('./test.txt', 'test_encrypted.txt', key)
 
 # Descriptografar um arquivo
-decrypt_file('test_encrypted.txt', 'test_decrypted2.txt', key)
+decrypt_file('test_encrypted.txt', 'test_decrypted.txt', key)
